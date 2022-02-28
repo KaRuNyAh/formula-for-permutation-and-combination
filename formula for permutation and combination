@@ -1,0 +1,27 @@
+int factorial(int x){
+    int fact = 1;
+    for(int i=2; i<=x; i++){
+        fact *= i;
+    }
+
+    return fact;
+}
+
+int printNoOfPermutations(int n, int r){
+    return (factorial(n)/factorial(n-r));
+}
+
+int printNoOfCombinations(int n, int r){
+    return (printNoOfPermutations(n, r)/factorial(r));
+}
+
+int main(){
+
+
+    int n = 12;
+    int r = 3;
+    printf("%d\n", printNoOfPermutations(n, r));
+    printf("%d", printNoOfCombinations(n, r));
+    return 0;
+
+}
